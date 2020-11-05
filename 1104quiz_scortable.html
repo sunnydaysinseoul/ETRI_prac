@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>시험결과확인</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px;
+        }
+
+        td {
+            border: 1px solid #444444
+            padding: 5px;
+            font-size: 20px;
+            vertical-align: center;
+            line-height: 40px;
+        }
+
+        .hd {
+            font-weight: bold;
+            background-color: #8ad5f4;
+        }
+
+        .ct {
+            text-align: center;
+        }
+
+    </style>
+    <script>
+
+        function s1() {
+
+            // let name = $('#name').val();
+            // let kor = $('#kor').val();
+            // let eng = $('#eng').val();
+            // let mat = $('#mat').val();
+            // let sum = $('#sum').val();
+            var name = document.getElementById("name").value;
+            var kor = document.getElementById("kor").value;
+            var eng = document.getElementById("eng").value;
+            var mat = document.getElementById("mat").value;
+            // var sum = document.getElementById("sum").value;
+            // parseInt() : string을 int로 바꿔줌
+            var sum = this.parseInt(kor)+this.parseInt(eng)+this.parseInt(mat);
+            document.getElementById("sum").innerHTML = "합계 : " + sum ;
+            console.log(sum);
+
+
+            if (sum >= 250) {
+                res = "합격";
+                document.getElementById("res").innerHTML = "합격";
+            } else {
+                document.getElementById("res").innerHTML = "불합격";
+                res = "불합격";
+            }
+            // if (sum == '') {
+            //     alert("점수 합계를 써주세요.");
+            // } else {
+            // }
+        }
+
+        function s2() {
+            // for (let i = 1; i<rows.length i++) {
+            // document.getElementById("tbAdd")[0];
+            // var rows = table.getElementsByTagName('tr'),
+            var name = document.getElementById("name").value;
+            var kor = document.getElementById("kor").value;
+            var eng = document.getElementById("eng").value;
+            var mat = document.getElementById("mat").value;
+            var sum = this.parseInt(kor)+this.parseInt(eng)+this.parseInt(mat);
+
+            var i = 1;
+
+            let temp_html =
+                `<tr>
+                    <td id="num">${i}</td>
+                    <td>${name}</td>
+                    <td>${kor}</td>
+                    <td>${eng}</td>
+                    <td>${mat}</td>
+                    <td>${sum}</td>
+                    <td>${res}</td>
+                </tr>`;
+
+            console.log(temp_html);
+            ``// $('#tbAdd').each(function (){i +=1;})
+            $('#tbAdd').append(temp_html);
+            // $('#tbAdd').bind('click', function fncSearch(){
+            //     count++;
+            // })
+
+        }
+
+
+    </script>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td>이름 :</td>
+        <td><input type="text" id="name"></td>
+    </tr>
+    <tr>
+        <td>점수 :</td>
+        <td><input type="number" min="1" max="100" id="kor" placeholder="국어">
+            <input type="number" min="1" max="100" id="eng" placeholder="영어">
+            <input type="number" min="1" max="100" id="mat" placeholder="수학">
+            <span id="sum"><input type="number" min="1" max="300" placeholder="합계" readonly></span>
+        </td>
+    </tr>
+    <tr>
+        <td>판정 :</td>
+        <td id="res"><input type="text" readonly placeholder="결과확인 버튼을 눌러주세요."></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button onclick="s1()">결과확인</button>
+            <button onclick="s2()">저장하기</button>
+        </td>
+    </tr>
+</table>
+<table border=0; class="ct" id="tbAdd">
+    <tr>
+        <td class="hd">번호</td>
+        <td class="hd">이름</td>
+        <td class="hd">국어</td>
+        <td class="hd">영어</td>
+        <td class="hd">수학</td>
+        <td class="hd">합계</td>
+        <td class="hd">결과</td>
+    </tr>
+
+</table>
+</body>
+</html>
