@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>학점계산기</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px;
+        }
+
+        td {
+            border: 1px solid #444444
+            padding: 5px;
+            font-size: 20px;
+            vertical-align: center;
+            line-height: 40px;
+        }
+
+        .hd {
+            font-weight: bold;
+            background-color: #8ad5f4;
+        }
+
+        .ct {
+            text-align: center;
+        }
+
+    </style>
+    <script>
+
+
+        function getScore() {
+            var score = document.getElementById("myScore").value;
+            // var gpa = "";
+            console.log(score);
+            // if (score >= 85) {
+            //     gpa = "A";
+            // } else if (score >= 65) {
+            //     gpa = "B";
+            // }else{
+            //     gpa = "C";
+            // }
+            // console.log(gpa);
+            // let temp_html =
+            //     `<td>${score}점은 ${gpa}학점 입니다.</td>`;
+            //
+            // console.log(temp_html);
+            // $('#showGpa').append(temp_html);
+        }
+
+
+    </script>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td>학점 입력</td>
+        <td><input id="myScore" type="number" min="0" max="100"></td>
+        <td>
+            <button onclick="getScore">학점 확인하기</button>
+        </td>
+    </tr>
+    <tr id="showGpa">
+
+    </tr>
+</table>
+</body>
+</html>

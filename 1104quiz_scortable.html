@@ -31,6 +31,13 @@
     </style>
     <script>
 
+        // //저장버튼 안보였다가 "결과보기"누르면 나타나게하기(step1)
+        // // document.getElementById("s2").style.display="none";
+        // $(document).ready(function (){
+        //    if( $("#s2").css("display") == "block"){
+        //        $("#s2").hide();
+        //    }
+        // })
         function s1() {
 
             // let name = $('#name').val();
@@ -46,8 +53,6 @@
             // parseInt() : string을 int로 바꿔줌
             var sum = this.parseInt(kor) + this.parseInt(eng) + this.parseInt(mat);
 
-            //저장버튼 안보였다가 "결과보기"누르면 나타나게하기(step1)
-            document.getElementById("s2").style.visibility = "hidden";
 
             if (name == '' || kor == "" || eng == "" || mat == "") {
                 alert("빈칸을 채워주세요.");
@@ -61,8 +66,9 @@
                     document.getElementById("res").innerHTML = "불합격";
                     res = "불합격";
                 }
-                //저장버튼 안보였다가 "결과보기"누르면 나타나게하기(step2)
-                document.getElementById("s2").style.visibility = "visible";
+                //
+                // //저장버튼 안보였다가 "결과보기"누르면 나타나게하기(step2)
+                // document.getElementById("s2").style.visibility = "visible";
             }
         }
 
