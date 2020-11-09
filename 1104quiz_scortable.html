@@ -44,22 +44,26 @@
             var mat = document.getElementById("mat").value;
             // var sum = document.getElementById("sum").value;
             // parseInt() : string을 int로 바꿔줌
-            var sum = this.parseInt(kor)+this.parseInt(eng)+this.parseInt(mat);
-            document.getElementById("sum").innerHTML = "합계 : " + sum ;
-            console.log(sum);
+            var sum = this.parseInt(kor) + this.parseInt(eng) + this.parseInt(mat);
 
+            //저장버튼 안보였다가 "결과보기"누르면 나타나게하기(step1)
+            document.getElementById("s2").style.visibility = "hidden";
 
-            if (sum >= 250) {
-                res = "합격";
-                document.getElementById("res").innerHTML = "합격";
+            if (name == '' || kor == "" || eng == "" || mat == "") {
+                alert("빈칸을 채워주세요.");
             } else {
-                document.getElementById("res").innerHTML = "불합격";
-                res = "불합격";
+                document.getElementById("sum").innerHTML = "합계 : " + sum;
+                console.log(sum);
+                if (sum >= 250) {
+                    res = "합격";
+                    document.getElementById("res").innerHTML = "합격";
+                } else {
+                    document.getElementById("res").innerHTML = "불합격";
+                    res = "불합격";
+                }
+                //저장버튼 안보였다가 "결과보기"누르면 나타나게하기(step2)
+                document.getElementById("s2").style.visibility = "visible";
             }
-            // if (sum == '') {
-            //     alert("점수 합계를 써주세요.");
-            // } else {
-            // }
         }
 
         function s2() {
@@ -70,7 +74,7 @@
             var kor = document.getElementById("kor").value;
             var eng = document.getElementById("eng").value;
             var mat = document.getElementById("mat").value;
-            var sum = this.parseInt(kor)+this.parseInt(eng)+this.parseInt(mat);
+            var sum = this.parseInt(kor) + this.parseInt(eng) + this.parseInt(mat);
 
             var i = 1;
 
